@@ -12,19 +12,19 @@ import shockedImage from './assets/shocked.png';
 import sleepyImage from './assets/sleepy.png';
 
 const Game = () => {
-  // Function to get the correct character image based on state
+  // Function to get a random character image based on state
   const getCharacterImage = (state) => {
-    switch(state) {
-      case 'smile': return smileImage;
-      case 'delighted': return delightedImage;
-      case 'annoyed': return annoyedImage;
-      case 'shocked': return shockedImage;
-      case 'sleepy': return sleepyImage;
-      default: return smileImage;
-    }
+    const images = {
+      correct: [delightedImage, shockedImage, smileImage],
+      incorrect: [annoyedImage, sleepyImage]
+    };
+    
+    const imageSet = state ? images.correct : images.incorrect;
+    const randomIndex = Math.floor(Math.random() * imageSet.length);
+    return imageSet[randomIndex];
   };
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [characterState, setCharacterState] = useState('smile');
+  const [characterState, setCharacterState] = useState(smileImage);
 
   // Function to get random dialogue
   const getRandomDialogue = (isCorrect) => {
@@ -43,23 +43,16 @@ const Game = () => {
 
   // Handle answer selection
   const handleAnswer = (selectedAnswer) => {
-    if (selectedAnswer === question.correctAnswer) {
-      setCharacterState('delighted');
-      
-      setTypeString("");
-      let randDialogue = getRandomDialogue(true); //true yields positive responses
-      setDialogue(randDialogue);
-      donttype.current = true;
-      
-    } else {
-      setCharacterState('annoyed');
-
-      setTypeString("");
-      let randDialogue = getRandomDialogue(false); //false yields negative responses
-      setDialogue(randDialogue);
-      donttype.current = true;
-      
-    }
+    const isCorrect = selectedAnswer === question.correctAnswer;
+    const dialogue = getRandomDialogue(isCorrect);
+    
+    // Update state only once
+    setCharacterState(getCharacterImage(isCorrect));
+    setDialogue(dialogue);
+    
+    // Reset typing
+    setTypeString("");
+    donttype.current = true;
     
     //move to next question
     if (currentQuestion < questions.data.length - 1) {
@@ -71,20 +64,20 @@ const Game = () => {
   useType(dialogue, typeString, setTypeString);
   
   return (
-    <div className="min-h-screen bg-black relative">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50 relative">
       {/* Background */}
       <img 
         src={backgroundImage} 
         alt="Background" 
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover opacity-30"
       />
 
       {/* Main Content Container */}
-      <div className="relative z-10 flex flex-row justify-evenly items-center min-h-screen p-8">
+      <div className="relative z-10 flex flex-row justify-center items-center min-h-screen p-8 space-x-18">
         {/* Question Section (Left) */}
-        <div className="w-1/3 max-w-md bg-black/60 p-6 rounded-xl shadow-lg">
-          <h2 className="text-2xl mb-4 text-white font-bold">Question {currentQuestion + 1}</h2>
-          <p className="text-white mb-6 text-lg font-medium">{question.question}</p>
+        <div className="w-1/3 max-w-md bg-pink-100 p-6 rounded-2xl shadow-lg border-4 border-pink-300 animate-float">
+          <h2 className="text-2xl mb-4 text-pink-800 font-bold text-shadow-md">Question {currentQuestion + 1}</h2>
+          <p className="text-pink-800 mb-6 text-lg font-medium text-shadow-sm">{question.question}</p>
           <div className="space-y-3">
             {question.answerChoices.map((option, index) => (
               <button
@@ -95,7 +88,7 @@ const Game = () => {
                   setDialogue(dialogue);
                   handleAnswer(option);
                 }}
-                className="w-full p-3 bg-white/10 hover:bg-pink-400/30 rounded-lg text-white font-semibold transition-colors duration-100 cursor-pointer"
+                className="w-full p-3 bg-pink-200 hover:bg-pink-300 rounded-2xl text-pink-800 font-semibold transition-all duration-200 transform hover:scale-105 cursor-pointer border-2 border-pink-300"
               >
                 {option}
               </button>
@@ -104,16 +97,16 @@ const Game = () => {
         </div>
 
         {/* Character Section (Right) */}
-        <div className="w-1/3 max-w-md flex flex-col items-center relative">
+        <div className="w-1/3 max-w-md flex flex-col items-center relative bg-purple-50 rounded-2xl p-4 shadow-lg animate-float">
           <img 
-            src={getCharacterImage(characterState)} 
+            src={characterState} 
             alt="Character" 
-            className="w-full h-auto drop-shadow-xl"
+            className="w-full h-auto drop-shadow-xl rounded-2xl"
           />
 
           {/* Dialogue Section */}
-          <div className="p-6 bg-black/60 rounded-xl shadow-lg w-full min-h-32">
-            <p className='text-white text-lg'>
+          <div className="p-6 bg-pink-200 rounded-2xl shadow-lg w-full min-h-32 animate-float relative overflow-hidden">
+            <p className='text-white text-lg text-shadow-sm relative z-10'>
               {
                 typeString
               }
