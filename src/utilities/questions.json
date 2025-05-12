@@ -1,0 +1,24 @@
+{
+    "data":[
+        {
+            "question":"What is the longest running anime?",
+            "answerChoices":["One Piece", "Jojo's Bizzare Adventure", "Kaguya Sama: Love is War?", "Assasination Classroom"],
+            "correctAnswer":"One Piece"
+        },
+        {
+            "question":"Who is best girl in Kaguya Sama: Love is War?",
+            "answerChoices":["Kaguya", "Hayasaka", "Chika", "Lino"],
+            "correctAnswer":"Kaguya"
+        },
+        {
+            "question":"Is Pokemon culturally an anime?",
+            "answerChoices":["Yes", "No"],
+            "correctAnswer":"Yes"
+        },
+        {
+            "question":"What character trait gain popularity in early 2013?",
+            "answerChoices": ["Tsundere", "Yandere", "Kuudere", "Dandere"],
+            "correctAnswer":"Tsundere"
+        }
+    ]
+}
