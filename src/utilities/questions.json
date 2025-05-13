@@ -1,24 +1,54 @@
 {
-    "data":[
+    "data": [
         {
-            "question":"What is the longest running anime?",
-            "answerChoices":["One Piece", "Jojo's Bizzare Adventure", "Kaguya Sama: Love is War?", "Assasination Classroom"],
-            "correctAnswer":"One Piece"
+            "question": "Which studio animated 'Attack on Titan: Final Season'?",
+            "answerChoices": ["Wit Studio", "MAPPA", "Ufotable", "Bones"],
+            "correctAnswer": "MAPPA"
         },
         {
-            "question":"Who is best girl in Kaguya Sama: Love is War?",
-            "answerChoices":["Kaguya", "Hayasaka", "Chika", "Lino"],
-            "correctAnswer":"Kaguya"
+            "question": "What is Denji's main motivation in Chainsaw Man?",
+            "answerChoices": ["To become a hero", "To pay off debt", "To touch boobs", "To kill devils"],
+            "correctAnswer": "To touch boobs"
         },
         {
-            "question":"Is Pokemon culturally an anime?",
-            "answerChoices":["Yes", "No"],
-            "correctAnswer":"Yes"
+            "question": "Which anime had a twist that the entire first season was inside a video game?",
+            "answerChoices": ["Re:Zero", "Sword Art Online", "No Game No Life", "Erased"],
+            "correctAnswer": "Sword Art Online"
         },
         {
-            "question":"What character trait gain popularity in early 2013?",
-            "answerChoices": ["Tsundere", "Yandere", "Kuudere", "Dandere"],
-            "correctAnswer":"Tsundere"
+            "question": "What is Gojo Satoru’s signature technique?",
+            "answerChoices": ["Fire Dragon’s Roar", "Infinity", "Chidori", "Domain Expansion"],
+            "correctAnswer": "Infinity"
+        },
+        {
+            "question": "In 'Oshi no Ko', what is the main protagonist's identity in his second life?",
+            "answerChoices": ["Idol manager", "Reincarnated doctor", "Her twin brother", "Music producer"],
+            "correctAnswer": "Her twin brother"
+        },
+        {
+            "question": "Which of these anime was originally a webcomic before becoming a full manga and anime?",
+            "answerChoices": ["My Hero Academia", "Demon Slayer", "One Punch Man", "Jujutsu Kaisen"],
+            "correctAnswer": "One Punch Man"
+        },
+        {
+            "question": "Which anime popularized the 'anime food looks too good' meme trend in the 2020s?",
+            "answerChoices": ["Demon Slayer", "Food Wars", "Campfire Cooking in Another World", "Toradora!"],
+            "correctAnswer": "Campfire Cooking in Another World"
+        },
+        {
+            "question": "Which anime character has the famous quote 'Power is not will, it is the phenomenon of physically making things happen'?",
+            "answerChoices": ["Lelouch", "Guts", "Gojo", "Makima"],
+            "correctAnswer": "Makima"
+        },
+        {
+            "question": "Which of these anime is not an isekai?",
+            "answerChoices": ["Re:Zero", "Jobless Reincarnation", "Tokyo Revengers", "That Time I Got Reincarnated as a Slime"],
+            "correctAnswer": "Tokyo Revengers"
+        },
+        {
+            "question": "Which anime has the main character who fakes being an all-knowing psychic detective?",
+            "answerChoices": ["Death Note", "Classroom of the Elite", "The Millionaire Detective", "The Detective is Already Dead"],
+            "correctAnswer": "The Detective is Already Dead"
         }
     ]
 }
