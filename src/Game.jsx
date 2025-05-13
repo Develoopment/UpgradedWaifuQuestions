@@ -163,7 +163,7 @@ const Game = () => {
 
               {/* Dialogue Section */}
               <div className="p-6 bg-pink-200 rounded-2xl shadow-lg w-full min-h-32 animate-float relative overflow-hidden">
-                <p className='text-white text-lg text-shadow-sm relative z-10'>
+                <p className='text-purple-800 text-lg text-shadow-sm relative z-10'>
                   {
                     typeString
                   }
